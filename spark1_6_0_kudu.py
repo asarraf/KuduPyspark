@@ -10,7 +10,7 @@ from pyspark import SparkConf
 from pyspark.sql import SQLContext
 
 # Initialize the configuration
-conf = (SparkConf().setMaster("yarn-client").setAppName("KuduSpark_AS"))
+conf = (SparkConf().setMaster("yarn-client").setAppName("KuduSpark_1_6_0"))
 
 # Initialize the SparkContext using the above conf
 sc = SparkContext(conf = conf)
