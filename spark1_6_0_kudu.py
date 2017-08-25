@@ -21,7 +21,7 @@ sqlContext = SQLContext(sc)
 # Use the ConfigParser
 configParser = ConfigParser.ConfigParser()
 # Load the file that contains the Configuration Parameters
-configParser.read('test.conf')
+configParser.read('kudu_configuration.conf')
 
 # Determine the kudu_master as provided in the Config File
 kudu_master = configParser.get('Kudu', 'KuduMaster')
