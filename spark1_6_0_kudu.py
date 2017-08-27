@@ -42,7 +42,7 @@ kudu_events_df = sqlContext.read.format('org.apache.kudu.spark.kudu'). \
 print('My Count: ' + str(kudu_events_df.count()))
 
 # Register this table as Temporary table
-kudu_event_df.registerAsTempTable("myTab")
+kudu_events_df.registerAsTempTable("myTab")
 
 # Query the Temporary table using SparkSQL Queries
 sqlContext.sql("SELECT count(*) FROM myTab").show()
