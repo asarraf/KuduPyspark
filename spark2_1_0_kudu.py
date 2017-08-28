@@ -39,5 +39,8 @@ kudu_data_df = spark.read.format('org.apache.kudu.spark.kudu'). \
         option('kudu.table', kudu_table). \
         load()
 
-# Display the count of rows in the table
-print('My Count: ' + str(kudu_events_df.count()))
+# Create or Replace a Temp View in Pyspark for executing sql queries
+kudu_data_df.createOrReplaceTempView("tab")
+
+# Count number of rows in the Table
+spark.sql("SELECT count(*) FROM tab").show()
